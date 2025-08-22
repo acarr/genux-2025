@@ -270,10 +270,371 @@ p {
    ========================================================================== */
 
 /* Individual blocks can be styled with specific selectors */
-#block-1 {
-  /* Hero block styles */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+
+/* ==========================================================================
+   Hero Block Styles
+   ========================================================================== */
+
+/* Base Hero Dimensions: 1925w x 695h from specs */
+.hero-block {
+  position: relative;
+  width: 100%;
+  height: 695px; /* Per spec: Hero height = 695 */
+  min-height: 695px;
+  overflow: hidden;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: none;
+}
+
+/* Hero Logos */
+.hero-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+}
+
+.logo-left {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.logo-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: auto;
+}
+
+/* Brand Logo Specific Sizes from specs */
+.genux-brand {
+  width: 122.6px;  /* Spec: BRAND-ID_GENUX width: 122.6 */
+  height: 48.52px; /* Spec: BRAND-ID_GENUX height: 48.52 */
+}
+
+.aiga-brand {
+  width: 113px;    /* Spec: BRAND-ID_AIGA-Boston width: 113 */
+  height: 36px;    /* Spec: BRAND-ID_AIGA-Boston height: 36 */
+}
+
+.telus-brand {
+  width: 212px;    /* Spec: BRAND-ID_TELUS-DIGITAL width: 212 */
+  height: 34px;    /* Spec: BRAND-ID_TELUS-DIGITAL height: 34 */
+}
+
+.brand-logo {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Main GENUX Logo */
+.hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: auto;
+}
+
+/* Event Details - Exact positioning from specs */
+.hero-details {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 70px; /* Footer height from spec */
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.event-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
+
+/* Event Detail Typography - Per specs */
+.event-date,
+.event-time,
+.event-location {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.event-date .label {
+  /* Date specs: Height: 27, Width: 296 */
+  color: #FFFFFF;
+  font-family: 'Stinger', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 27px;
+  width: 296px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-time .label {
+  /* Time specs: Height: 38, Width: 204 */
+  color: #FFFFFF;
+  font-family: 'Stinger', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 38px;
+  width: 204px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-location .label {
+  /* Location specs: Height: 27, Width: 324 */
+  color: #FFFFFF;
+  font-family: 'Stinger', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 27px;
+  width: 324px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 1200px) {
+  .hero-block {
+    height: 60vh;
+    min-height: 500px;
+  }
+  
+  .genux-brand {
+    width: 98px;
+    height: 39px;
+  }
+  
+  .aiga-brand {
+    width: 90px;
+    height: 29px;
+  }
+  
+  .telus-brand {
+    width: 170px;
+    height: 27px;
+  }
+  
+  .event-date .label,
+  .event-time .label,
+  .event-location .label {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .event-date .label {
+    width: 240px;
+  }
+  
+  .event-time .label {
+    width: 160px;
+  }
+  
+  .event-location .label {
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-block {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    padding: 15px;
+  }
+  
+  .logo-right {
+    gap: 10px;
+  }
+  
+  .genux-brand {
+    width: 80px;
+    height: 32px;
+  }
+  
+  .aiga-brand {
+    width: 70px;
+    height: 22px;
+  }
+  
+  .telus-brand {
+    width: 130px;
+    height: 21px;
+  }
+  
+  .event-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .event-date,
+  .event-time,
+  .event-location {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .event-date .label,
+  .event-time .label,
+  .event-location .label {
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: auto;
+    height: auto;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-block {
+    height: 40vh;
+    min-height: 350px;
+  }
+  
+  .hero-content {
+    padding: 10px;
+  }
+  
+  .logo-right {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  
+  .genux-brand {
+    width: 65px;
+    height: 26px;
+  }
+  
+  .aiga-brand {
+    width: 55px;
+    height: 18px;
+  }
+  
+  .telus-brand {
+    width: 100px;
+    height: 16px;
+  }
+  
+  .event-date .label,
+  .event-time .label,
+  .event-location .label {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Large screens - Maintain exact specs */
+@media (min-width: 1920px) {
+  .hero-block {
+    height: 695px; /* Maintain exact spec height */
+  }
+  
+  .hero-content {
+    padding: 30px;
+  }
+  
+  /* Use exact spec dimensions on large screens */
+  .genux-brand {
+    width: 122.6px;
+    height: 48.52px;
+  }
+  
+  .aiga-brand {
+    width: 113px;
+    height: 36px;
+  }
+  
+  .telus-brand {
+    width: 212px;
+    height: 34px;
+  }
+  
+  .event-date .label {
+    width: 296px;
+    height: 27px;
+    font-size: 23px;
+    letter-spacing: 3px;
+  }
+  
+  .event-time .label {
+    width: 204px;
+    height: 38px;
+    font-size: 23px;
+    letter-spacing: 3px;
+  }
+  
+  .event-location .label {
+    width: 324px;
+    height: 27px;
+    font-size: 23px;
+    letter-spacing: 3px;
+  }
+}
+
+/* Fallback font for Stinger */
+.event-info .label {
+  font-family: 'Stinger', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #block-2 {
