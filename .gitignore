@@ -52,13 +52,6 @@ out/
 *.tmp
 *.temp
 
-# Design Files (large assets)
-reference/*.png
-reference/*.pdf
-assets/images/*.png
-assets/images/*.jpg
-assets/images/*.jpeg
-
 # Cache
 .cache/
 .parcel-cache/
