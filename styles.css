@@ -266,6 +266,264 @@ p {
 }
 
 /* ==========================================================================
+   Header Block Styles
+   ========================================================================== */
+
+/* Header Dimensions: 1920w x 96h from specs */
+.header-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 96px; /* Per spec: Header height = 96 */
+  background-color: #001E1D; /* Per spec: Background Color = #001E1D */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 100%;
+}
+
+/* Header Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-genux-logo {
+  width: 107px;   /* Per spec: BRAND-ID_GENUX width: 107 */
+  height: 42.46px; /* Per spec: BRAND-ID_GENUX height: 42.46 */
+  object-fit: contain;
+}
+
+/* Navigation */
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link {
+  /* Navigation Typography - Per specs */
+  color: #FFFFFF; /* Per spec: Text Color = #FFFFFF */
+  font-family: 'Adelphi PE Variable', sans-serif; /* Per spec for ABOUT/SPEAKERS */
+  font-weight: bold; /* Per spec: Font Weight = Bold */
+  font-size: 18px; /* Per spec: Font Size = 18 */
+  letter-spacing: 3px; /* Per spec: Letter Spacing = 3 */
+  text-align: center; /* Per spec: Text Align = Center */
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Purchase Button */
+.header-cta {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.purchase-button {
+  /* Button specs: Height: 34, Width: 220, Background: #95E208 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 34px; /* Per spec: Button height = 34 */
+  background-color: #95E208; /* Per spec: Background Color = #95E208 */
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.purchase-button:hover,
+.purchase-button:focus {
+  background-color: #7DB806;
+  transform: translateY(-1px);
+}
+
+.button-text {
+  /* Button Text specs: Height: 37, Width: 419 */
+  color: #000000; /* Per spec: Text Color = #000000 */
+  font-family: 'Stinger', sans-serif; /* Per spec: Font Family = Stinger */
+  font-weight: 900; /* Per spec: Font Weight = Heavy */
+  font-size: 16px; /* Per spec: Font Size = 16 */
+  letter-spacing: 3px; /* Per spec: Letter Spacing = 3 */
+  text-align: center; /* Per spec: Text Align = Center */
+  text-transform: uppercase;
+}
+
+/* Page offset for fixed header */
+.page-container {
+  margin-top: 96px; /* Account for fixed header height */
+}
+
+/* Responsive Design for Header */
+@media (max-width: 1200px) {
+  .header-content {
+    padding: 0 30px;
+  }
+  
+  .nav-list {
+    gap: 40px;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+  }
+  
+  .purchase-button {
+    width: 180px;
+    height: 30px;
+  }
+  
+  .button-text {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Decrease nav spacing below 1100px */
+@media (max-width: 1100px) {
+  .nav-list {
+    gap: 20px;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 6px 10px;
+  }
+}
+
+/* Hide navigation below 900px */
+@media (max-width: 900px) {
+  .header-nav {
+    display: none;
+  }
+  
+  .header-content {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-block {
+    height: 80px;
+  }
+  
+  .page-container {
+    margin-top: 80px;
+  }
+  
+  .header-content {
+    padding: 0 20px;
+  }
+  
+  .nav-list {
+    gap: 30px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+  }
+  
+  .purchase-button {
+    width: 160px;
+    height: 28px;
+  }
+  
+  .button-text {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  
+  .header-genux-logo {
+    width: 85px;
+    height: 34px;
+  }
+}
+
+/* Mobile specific styles */
+@media (max-width: 480px) {
+  .header-block {
+    height: 70px;
+  }
+  
+  .page-container {
+    margin-top: 70px;
+  }
+  
+  .header-content {
+    padding: 0 15px;
+  }
+  
+  .purchase-button {
+    width: 140px;
+    height: 26px;
+  }
+  
+  .button-text {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  
+  .header-genux-logo {
+    width: 70px;
+    height: 28px;
+  }
+}
+
+/* Fallback fonts */
+.nav-link {
+  font-family: 'Adelphi PE Variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.button-text {
+  font-family: 'Stinger', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ==========================================================================
    Block-specific styles (to be expanded)
    ========================================================================== */
 
@@ -286,6 +544,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1; /* Ensure hero is below header */
 }
 
 .hero-background {
@@ -316,50 +575,7 @@ p {
   max-width: none;
 }
 
-/* Hero Logos */
-.hero-logos {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  height: auto;
-  padding-top: 20px;
-}
 
-.logo-left {
-  display: flex;
-  align-items: center;
-  height: auto;
-}
-
-.logo-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 15px;
-  height: auto;
-}
-
-/* Brand Logo Specific Sizes from specs */
-.genux-brand {
-  width: 122.6px;  /* Spec: BRAND-ID_GENUX width: 122.6 */
-  height: 48.52px; /* Spec: BRAND-ID_GENUX height: 48.52 */
-}
-
-.aiga-brand {
-  width: 113px;    /* Spec: BRAND-ID_AIGA-Boston width: 113 */
-  height: 36px;    /* Spec: BRAND-ID_AIGA-Boston height: 36 */
-}
-
-.telus-brand {
-  width: 212px;    /* Spec: BRAND-ID_TELUS-DIGITAL width: 212 */
-  height: 34px;    /* Spec: BRAND-ID_TELUS-DIGITAL height: 34 */
-}
-
-.brand-logo {
-  object-fit: contain;
-  flex-shrink: 0;
-}
 
 /* Main GENUX Logo */
 .hero-main {
@@ -455,20 +671,7 @@ p {
     min-height: 500px;
   }
   
-  .genux-brand {
-    width: 98px;
-    height: 39px;
-  }
-  
-  .aiga-brand {
-    width: 90px;
-    height: 29px;
-  }
-  
-  .telus-brand {
-    width: 170px;
-    height: 27px;
-  }
+
   
   .event-date .label,
   .event-time .label,
@@ -500,24 +703,7 @@ p {
     padding: 15px;
   }
   
-  .logo-right {
-    gap: 12px;
-  }
-  
-  .genux-brand {
-    width: 80px;
-    height: 32px;
-  }
-  
-  .aiga-brand {
-    width: 70px;
-    height: 22px;
-  }
-  
-  .telus-brand {
-    width: 130px;
-    height: 21px;
-  }
+
   
   .hero-details {
     height: 60px;
@@ -558,24 +744,7 @@ p {
     padding: 10px;
   }
   
-  .logo-right {
-    gap: 8px;
-  }
-  
-  .genux-brand {
-    width: 65px;
-    height: 26px;
-  }
-  
-  .aiga-brand {
-    width: 55px;
-    height: 18px;
-  }
-  
-  .telus-brand {
-    width: 100px;
-    height: 16px;
-  }
+
   
   .hero-details {
     height: 50px;
@@ -604,20 +773,6 @@ p {
   }
   
   /* Use exact spec dimensions on large screens */
-  .genux-brand {
-    width: 122.6px;
-    height: 48.52px;
-  }
-  
-  .aiga-brand {
-    width: 113px;
-    height: 36px;
-  }
-  
-  .telus-brand {
-    width: 212px;
-    height: 34px;
-  }
   
   .event-date .label {
     width: 296px;
