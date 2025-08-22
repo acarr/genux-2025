@@ -813,6 +813,379 @@ p {
 }
 
 /* ==========================================================================
+   Speakers Block Styles
+   ========================================================================== */
+
+/* Speakers Dimensions: 1920w x 1403h from specs */
+.speakers-block {
+  width: 100%;
+  height: 1403px; /* Per spec: SPEAKERS height = 1403 */
+  min-height: 1403px;
+  background-color: #041D1D; /* Per spec: Background Color = #041D1D */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scrolling Text Containers */
+.speakers-scrolling-container {
+  height: 100px; /* Per spec: Speakers Scrolling Text Container height = 100 */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.schedule-scrolling-container {
+  height: 96px; /* Per spec: Schedule Scrolling Text Container height = 96 */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+/* Scrolling Text */
+.speakers-scrolling-text,
+.schedule-scrolling-text {
+  height: 66px; /* Per spec: Speakers Scrolling Text height = 66 */
+  white-space: nowrap;
+  font-family: 'Stinger', sans-serif; /* Per spec: Font Family = Stinger */
+  font-weight: 900; /* Per spec: Font Weight = Heavy */
+  font-size: 50px; /* Per spec: Font Size = 50 */
+  letter-spacing: 3px; /* Per spec: Letter Spacing = 3 */
+  color: #00FFFF; /* Bright cyan for visibility */
+  animation: scroll-horizontal 20s linear infinite;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-scrolling-text {
+  height: 80px; /* Per spec: Schedule Scrolling Text height = 80 */
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Main Speakers Content */
+.speakers-content {
+  flex: 1;
+  width: 100%;
+  height: 1207px; /* Per spec: SPEAKERS-BACKGROUND height = 1207 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 90px;
+}
+
+.speakers-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.speakers-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Speakers Grid */
+.speakers-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 1740px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/* Individual Speaker Card */
+.speaker-card {
+  width: 335px; /* Per spec: Speaker width = 335 */
+  height: 433px; /* Per spec: Speaker height = 433 */
+  border-radius: 13px; /* Per spec: Border Radius = 13 */
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+}
+
+.speaker-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.speaker-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.speaker-name-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #000000; /* Per spec: Background Color = #000000 */
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speaker-name {
+  color: #FFFFFF; /* Per spec: Text Color = #FFFFFF */
+  font-family: 'Adelphi PE Variable', sans-serif; /* Per spec: Font Family = Adelphi PE Variable */
+  font-weight: bold; /* Per spec: Font Weight = Bold */
+  font-size: 25px; /* Per spec: Font Size = 25 */
+  letter-spacing: 3px; /* Per spec: Letter Spacing = 3 */
+  line-height: 35px; /* Per spec: Line Height = 35 */
+  text-align: center; /* Per spec: Text Align = Center */
+  margin: 0;
+}
+
+/* Workshop Section */
+.workshop-section {
+  position: relative;
+  z-index: 2;
+  width: 1742px; /* Per spec: Workshop width = 1742 */
+  height: 421px; /* Per spec: Workshop height = 421 */
+  background-color: #041D1D; /* Per spec: Background Color = #041D1D */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.workshop-title {
+  color: #FFFFFF; /* Per spec: Text Color = #FFFFFF */
+  font-family: 'Adelphi PE Variable', sans-serif; /* Per spec: Font Family = Adelphi PE Variable */
+  font-weight: bold; /* Per spec: Font Weight = Bold */
+  font-size: 48px; /* Per spec: Font Size = 48 */
+  letter-spacing: 3px; /* Per spec: Letter Spacing = 3 */
+  line-height: 35px; /* Per spec: Line Height = 35 */
+  text-align: center; /* Per spec: Text Align = Center */
+  margin: 0;
+}
+
+/* Responsive Design for Speakers */
+@media (max-width: 1400px) {
+  .speakers-block {
+    height: auto;
+    min-height: 800px;
+  }
+  
+  .speakers-content {
+    height: auto;
+    padding: 30px 40px;
+  }
+  
+  .speakers-grid {
+    gap: 25px;
+  }
+  
+  .speaker-card {
+    width: 280px;
+    height: 360px;
+  }
+  
+  .workshop-section {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .workshop-title {
+    font-size: 40px;
+  }
+  
+  .speakers-scrolling-text,
+  .schedule-scrolling-text {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .speakers-content {
+    padding: 20px 30px;
+  }
+  
+  .speakers-grid {
+    gap: 20px;
+  }
+  
+  .speaker-card {
+    width: 250px;
+    height: 320px;
+  }
+  
+  .speaker-name {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  
+  .workshop-section {
+    height: 250px;
+  }
+  
+  .workshop-title {
+    font-size: 36px;
+  }
+  
+  .speakers-scrolling-text,
+  .schedule-scrolling-text {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .speakers-content {
+    padding: 15px 20px;
+  }
+  
+  .speakers-grid {
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .speaker-card {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .speaker-name {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  
+  .workshop-section {
+    height: 200px;
+  }
+  
+  .workshop-title {
+    font-size: 30px;
+  }
+  
+  .speakers-scrolling-text,
+  .schedule-scrolling-text {
+    font-size: 28px;
+  }
+  
+  .speakers-scrolling-container {
+    height: 80px;
+  }
+  
+  .schedule-scrolling-container {
+    height: 76px;
+  }
+}
+
+/* Two speakers per row on smallest devices */
+@media (max-width: 480px) {
+  .speakers-content {
+    padding: 10px 15px;
+  }
+  
+  .speakers-grid {
+    gap: 10px;
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  .speaker-card {
+    width: calc(50% - 5px); /* Two per row with gap */
+    max-width: 160px;
+    height: 200px;
+  }
+  
+  .speaker-name {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+  }
+  
+  .speaker-name-container {
+    padding: 8px;
+  }
+  
+  .workshop-section {
+    height: 150px;
+    width: calc(100% - 20px); /* Narrower on mobile */
+  }
+  
+  .workshop-title {
+    font-size: 24px;
+  }
+  
+  .speakers-scrolling-text,
+  .schedule-scrolling-text {
+    font-size: 22px;
+  }
+  
+  .speakers-scrolling-container {
+    height: 60px;
+  }
+  
+  .schedule-scrolling-container {
+    height: 56px;
+  }
+}
+
+/* Pause animations on hover for accessibility */
+.speakers-scrolling-text:hover,
+.schedule-scrolling-text:hover {
+  animation-play-state: paused;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .speakers-scrolling-text,
+  .schedule-scrolling-text {
+    animation: none;
+  }
+  
+  .speaker-card {
+    transition: none;
+  }
+}
+
+/* Fallback fonts */
+.speakers-scrolling-text,
+.schedule-scrolling-text {
+  font-family: 'Stinger', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.speaker-name,
+.workshop-title {
+  font-family: 'Adelphi PE Variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ==========================================================================
    Hero Block Styles
    ========================================================================== */
 
@@ -1087,42 +1460,4 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#block-2 {
-  /* Block 2 styles */
-  background-color: #f8f9fa;
-}
 
-#block-3 {
-  /* Block 3 styles */
-  background-color: #ffffff;
-}
-
-#block-4 {
-  /* Block 4 styles */
-  background-color: #f1f3f4;
-}
-
-#block-5 {
-  /* Block 5 styles */
-  background-color: #ffffff;
-}
-
-#block-6 {
-  /* Block 6 styles */
-  background-color: #2c3e50;
-  color: white;
-}
-
-/* ==========================================================================
-   Scrolling Text Demo Styles
-   ========================================================================== */
-
-.scrolling-text-demo {
-  margin-top: var(--space-lg);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--color-accent);
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: var(--space-sm);
-  border-radius: 8px;
-}
