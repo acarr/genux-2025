@@ -809,7 +809,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 296px;
   height: 27px;
 }
 
@@ -932,9 +931,6 @@ p {
   /* Hero adjustments */
   .hero-block { height: 60vh; min-height: 500px; }
   .event-date .label, .event-time .label, .event-location .label { font-size: 18px; letter-spacing: 2px; }
-  .event-date .label { width: 240px; }
-  .event-time .label { width: 160px; }
-  .event-location .label { width: 260px; }
 }
 
 /* Medium-Large breakpoint - 1100px down */
@@ -1071,7 +1067,4 @@ p {
 @media (min-width: 1920px) {
   .hero-block { height: 695px; }
   .hero-content { padding: 30px; }
-  .event-date .label { width: 296px; height: 27px; font-size: 23px; letter-spacing: 3px; }
-  .event-time .label { width: 204px; height: 38px; font-size: 23px; letter-spacing: 3px; }
-  .event-location .label { width: 324px; height: 27px; font-size: 23px; letter-spacing: 3px; }
 }
