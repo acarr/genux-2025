@@ -41,10 +41,12 @@
 - **Height:** 59  
 - **Text Color:** #032A2A  
 - **Text Style:** Title  
+- **Text** "COALESCE TO CREATE"
 
 ## 8. Description
 - **Height:** 195  
-- **Text Color:** #000000  
+- **Text Color:** #000000 
+- **Text:** "GENUX Boston is an annual symposium conference that brings together Boston and the New England area minds in User Experience. AI has moved from an emerging tool to a collaborative force—blurring boundaries between disciplines, reshaping workflows, and redefining the creative process itself. We coalesce to create."
 
 ## 9. Button Container
 - **Height:** 50  
@@ -64,3 +66,4 @@
 - **Font Weight:** Heavy  
 - **Font Size:** 17  
 - **Letter Spacing:** 3  
+- **Text:** "PURCHASE TICKETS HERE"

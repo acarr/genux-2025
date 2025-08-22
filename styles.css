@@ -11,9 +11,11 @@
   --color-text-light: #666666;
   --color-background: #ffffff;
   
+
+
   /* Typography */
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-family-secondary: Georgia, 'Times New Roman', serif;
+  --font-family-primary: 'Adelphi PE Variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;;
+  --font-family-secondary: 'Stinger', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
   
   /* Font sizes - fluid typography */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -528,6 +530,287 @@ p {
    ========================================================================== */
 
 /* Individual blocks can be styled with specific selectors */
+
+/* ==========================================================================
+   Intro Block Styles
+   ========================================================================== */
+
+/* Intro Dimensions: 1920w x 512h from specs */
+.intro-block {
+  width: 100%;
+  height: 512px; /* Per spec: Intro height = 512 */
+  min-height: 512px;
+  background-color: #FFFFFF; /* Per spec: Background Color = #FFFFFF */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 90px; /* Account for 1920 - 1740 = 180, so 90px each side */
+}
+
+.intro-content {
+  width: 100%;
+  max-width: 1740px; /* Per spec: Content width = 1740 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 166px; /* Per spec: Item Spacing = 166 */
+}
+
+/* Image Section */
+.intro-image {
+  flex-shrink: 0;
+  width: 569px; /* Per spec: PAST-IMAGE-CATHERINE width = 569 */
+  height: 437px; /* Per spec: PAST-IMAGE-CATHERINE height = 437 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+/* Text Content Section */
+.intro-text-content {
+  width: 994px; /* Per spec: Text Content Container width = 994 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px; /* Per spec: Item Spacing = 30 */
+}
+
+.intro-text-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px; /* Per spec: Item Spacing = 17 */
+}
+
+/* Typography */
+.intro-title {
+  height: 59px; /* Per spec: Title height = 59 */
+  color: #032A2A; /* Per spec: Text Color = #032A2A */
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.intro-description {
+  color: #000000; /* Per spec: Text Color = #000000 */
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Button */
+
+
+.intro-button {
+  height: 100%;
+  background-color: #041D1D; /* Per spec: Background Color = #041D1D */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+.intro-button:hover,
+.intro-button:focus {
+  background-color: #0A2A2A;
+  transform: translateY(-1px);
+}
+
+.intro-button-text {
+  color: #95E208; /* Per spec: Text Color = #95E208 */
+  font-family: 'Stinger', sans-serif; /* Per spec: Font Family = Stinger */
+  font-weight: 900; /* Per spec: Font Weight = Heavy */
+  font-size: 17px; /* Per spec: Font Size = 17 */
+  letter-spacing: 3px; /* Per spec: Letter Spacing = 3 */
+  text-align: center; /* Per spec: Text Align = Center */
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+/* Responsive Design for Intro */
+@media (max-width: 1400px) {
+  .intro-block {
+    padding: 0 40px;
+    height: auto;
+    min-height: 400px;
+  }
+  
+  .intro-content {
+    gap: 80px;
+  }
+  
+  .intro-image {
+    width: 400px;
+    height: 300px;
+  }
+  
+  .intro-text-content {
+    width: auto;
+    flex: 1;
+  }
+  
+  .intro-title {
+    height: auto;
+    font-size: var(--font-size-2xl);
+  }
+  
+  .intro-description {
+    height: auto;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro-block {
+    padding: 40px 30px;
+  }
+  
+  .intro-content {
+    gap: 50px;
+  }
+  
+  .intro-image {
+    width: 350px;
+    height: 250px;
+  }
+  
+  .intro-description {
+    font-size: 15px;
+  }
+  
+  .intro-button-container {
+    width: 250px;
+    height: 45px;
+  }
+  
+  .intro-button-text {
+    font-size: 15px;
+    letter-spacing: 2px;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* Mobile: Image above text */
+@media (max-width: 768px) {
+  .intro-block {
+    padding: 30px 20px;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .intro-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .intro-image {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    order: -1; /* Image above text on mobile */
+  }
+  
+  .intro-text-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .intro-text-block {
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .intro-title {
+    font-size: var(--font-size-xl);
+    text-align: center;
+  }
+  
+  .intro-description {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .intro-button-container {
+    width: 220px;
+    height: 40px;
+  }
+  
+  .intro-button-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-block {
+    padding: 20px 15px;
+  }
+  
+  .intro-content {
+    gap: 20px;
+  }
+  
+  .intro-image {
+    height: 200px;
+  }
+  
+  .intro-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .intro-description {
+    font-size: 13px;
+  }
+  
+  .intro-button-container {
+    width: 200px;
+    height: 36px;
+  }
+  
+  .intro-button-text {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Fallback fonts */
+.intro-description {
+  font-family: 'Adelphi PE Variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.intro-button-text {
+  font-family: 'Stinger', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+}
 
 /* ==========================================================================
    Hero Block Styles
