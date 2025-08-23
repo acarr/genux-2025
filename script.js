@@ -127,6 +127,93 @@ const animateOnScroll = () => {
 };
 
 // ==========================================================================
+// FAQ Accordion Management
+// ==========================================================================
+
+class FAQAccordion {
+  constructor() {
+    this.faqItems = document.querySelectorAll('.faq-item');
+    this.init();
+  }
+  
+  init() {
+    this.faqItems.forEach((item, index) => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      
+      if (question && answer) {
+        // Add click event listener
+        question.addEventListener('click', () => this.toggleFAQ(question, answer));
+        
+        // Add keyboard support
+        question.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.toggleFAQ(question, answer);
+          }
+        });
+        
+        // Set initial state based on aria-expanded
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        this.setFAQState(question, answer, isExpanded);
+      }
+    });
+  }
+  
+  toggleFAQ(question, answer) {
+    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+    const newState = !isExpanded;
+    
+    this.setFAQState(question, answer, newState);
+    
+    // Custom event for FAQ toggle
+    document.dispatchEvent(new CustomEvent('faqToggle', {
+      detail: { question, answer, isExpanded: newState }
+    }));
+  }
+  
+  setFAQState(question, answer, isExpanded) {
+    // Update ARIA attributes
+    question.setAttribute('aria-expanded', isExpanded);
+    answer.setAttribute('aria-hidden', !isExpanded);
+    
+    // Update classes for CSS transitions
+    if (isExpanded) {
+      answer.classList.add('faq-open');
+    } else {
+      answer.classList.remove('faq-open');
+    }
+  }
+  
+  // Public methods
+  openFAQ(index) {
+    const item = this.faqItems[index];
+    if (item) {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      this.setFAQState(question, answer, true);
+    }
+  }
+  
+  closeFAQ(index) {
+    const item = this.faqItems[index];
+    if (item) {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      this.setFAQState(question, answer, false);
+    }
+  }
+  
+  closeAllFAQs() {
+    this.faqItems.forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      this.setFAQState(question, answer, false);
+    });
+  }
+}
+
+// ==========================================================================
 // Block Management
 // ==========================================================================
 
@@ -281,6 +368,9 @@ ready(() => {
   // Initialize block manager
   window.blockManager = new BlockManager();
   
+  // Initialize FAQ accordion
+  window.faqAccordion = new FAQAccordion();
+  
   // Handle reduced motion preference
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.body.classList.add('reduced-motion');
@@ -289,6 +379,11 @@ ready(() => {
   // Example: Listen for block changes
   document.addEventListener('blockChange', (e) => {
     console.log(`Entered block ${e.detail.index + 1}`);
+  });
+  
+  // Example: Listen for FAQ toggles
+  document.addEventListener('faqToggle', (e) => {
+    console.log(`FAQ toggled: ${e.detail.isExpanded ? 'opened' : 'closed'}`);
   });
 });
 
@@ -300,6 +395,7 @@ ready(() => {
 window.GENUX = {
   ScrollingText,
   BlockManager,
+  FAQAccordion,
   createScrollObserver,
   debounce,
   throttle,
@@ -307,5 +403,10 @@ window.GENUX = {
   // Helper functions
   scrollToBlock: (index) => window.blockManager?.scrollToBlock(index),
   getCurrentBlock: () => window.blockManager?.getCurrentBlock(),
-  getScrollingTexts: () => window.blockManager?.getScrollingTexts()
+  getScrollingTexts: () => window.blockManager?.getScrollingTexts(),
+  
+  // FAQ functions
+  openFAQ: (index) => window.faqAccordion?.openFAQ(index),
+  closeFAQ: (index) => window.faqAccordion?.closeFAQ(index),
+  closeAllFAQs: () => window.faqAccordion?.closeAllFAQs()
 };
