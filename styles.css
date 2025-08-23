@@ -56,6 +56,16 @@
   --z-index-elevated: 10;
   --z-index-overlay: 100;
   --z-index-modal: 1000;
+  
+  /* Breakpoints */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-nav-hide: 900px;
+  --bp-desktop: 1024px;
+  --bp-nav-compact: 1100px;
+  --bp-large: 1200px;
+  --bp-xl: 1400px;
+  --bp-ultra: 1920px;
 }
 
 /* ==========================================================================
@@ -306,6 +316,19 @@ p {
   margin-top: 96px; /* Account for fixed header */
 }
 
+  /* Responsive page container */
+  @media (max-width: 768px) {
+    .page-container {
+      margin-top: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-container {
+      margin-top: 70px;
+    }
+  }
+
 .content-block {
   min-height: 100vh;
   width: 100%;
@@ -315,6 +338,33 @@ p {
   position: relative;
   padding: var(--space-xl) var(--container-padding);
 }
+
+  /* Responsive content block */
+  @media (min-width: 768px) {
+    :root {
+      --container-padding: var(--space-lg);
+    }
+    
+    .content-block {
+      padding: var(--space-2xl) var(--container-padding);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --container-padding: var(--space-xl);
+    }
+    
+    .content-block {
+      padding: var(--space-3xl) var(--container-padding);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    :root {
+      --container-padding: var(--space-2xl);
+    }
+  }
 
 .block-content {
   width: 100%;
@@ -339,6 +389,19 @@ p {
   align-items: center;
 }
 
+  /* Header responsive */
+  @media (max-width: 768px) {
+    .header-block {
+      height: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-block {
+      height: 70px;
+    }
+  }
+
 .header-content {
   width: 100%;
   max-width: 1920px;
@@ -349,6 +412,31 @@ p {
   padding: 0 40px;
   height: 100%;
 }
+
+  /* Header content responsive */
+  @media (max-width: 1200px) {
+    .header-content {
+      padding: 0 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-content {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-content {
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .header-content {
+      justify-content: space-between;
+    }
+  }
 
 .header-logo {
   display: flex;
@@ -362,12 +450,34 @@ p {
   object-fit: contain;
 }
 
+  /* Logo responsive */
+  @media (max-width: 768px) {
+    .header-genux-logo {
+      width: 85px;
+      height: 34px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-genux-logo {
+      width: 70px;
+      height: 28px;
+    }
+  }
+
 .header-nav {
   flex: 1;
   display: flex;
   justify-content: center;
   height: 100%;
 }
+
+  /* Navigation responsive */
+  @media (max-width: 900px) {
+    .header-nav {
+      display: none;
+    }
+  }
 
 .nav-list {
   display: flex;
@@ -378,6 +488,25 @@ p {
   padding: 0;
   height: 100%;
 }
+
+  /* Navigation list responsive */
+  @media (max-width: 1200px) {
+    .nav-list {
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .nav-list {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-list {
+      gap: 30px;
+    }
+  }
 
 .nav-item {
   display: flex;
@@ -398,6 +527,29 @@ p {
   padding: 8px 16px;
   border-radius: 4px;
 }
+
+  /* Navigation link responsive */
+  @media (max-width: 1200px) {
+    .nav-link {
+      font-size: 16px;
+      letter-spacing: 2px;
+      padding: 6px 12px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .nav-link {
+      padding: 6px 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 4px 8px;
+    }
+  }
 
 .nav-link:hover,
 .nav-link:focus {
@@ -430,6 +582,34 @@ p {
   letter-spacing: 3px;
   width: 220px;
 }
+
+  /* Purchase button responsive */
+  @media (max-width: 1200px) {
+    .purchase-button {
+      width: 180px;
+      height: 30px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .purchase-button {
+      width: 160px;
+      height: 28px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .purchase-button {
+      width: 140px;
+      height: 26px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+  }
 
 .purchase-button:hover,
 .purchase-button:focus {
@@ -544,6 +724,142 @@ p {
   background-color: #0A2A2A;
   transform: translateY(-1px);
 }
+
+  /* Intro responsive */
+  @media (max-width: 1400px) {
+    .intro-block {
+      padding: 0 40px;
+      height: auto;
+      min-height: 400px;
+    }
+
+    .intro-content {
+      gap: 80px;
+    }
+
+    .intro-image {
+      width: 400px;
+      height: 300px;
+    }
+
+    .intro-text-content {
+      width: auto;
+      flex: 1;
+    }
+
+    .intro-title {
+      height: auto;
+      font-size: var(--font-size-2xl);
+    }
+
+    .intro-description {
+      height: auto;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .intro-block {
+      padding: 40px 30px;
+    }
+
+    .intro-content {
+      gap: 50px;
+    }
+
+    .intro-image {
+      width: 350px;
+      height: 250px;
+    }
+
+    .intro-description {
+      font-size: 15px;
+    }
+
+    .intro-button {
+      height: 45px;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .intro-block {
+      padding: 30px 20px;
+      height: auto;
+      min-height: auto;
+    }
+
+    .intro-content {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .intro-image {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      order: -1;
+    }
+
+    .intro-text-content {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      gap: 25px;
+    }
+
+    .intro-text-block {
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .intro-title {
+      font-size: var(--font-size-xl);
+      text-align: center;
+    }
+
+    .intro-description {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .intro-button {
+      height: 40px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro-block {
+      padding: 20px 15px;
+    }
+
+    .intro-content {
+      gap: 20px;
+    }
+
+    .intro-image {
+      height: 200px;
+    }
+
+    .intro-title {
+      font-size: var(--font-size-lg);
+    }
+
+    .intro-description {
+      font-size: 13px;
+    }
+
+    .intro-button {
+      height: 36px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+  }
 
 /* ==========================================================================
    Speakers Block Styles
@@ -728,6 +1044,34 @@ p {
   z-index: 1;
 }
 
+  /* Hero block responsive */
+  @media (max-width: 1200px) {
+    .hero-block {
+      height: 60vh;
+      min-height: 500px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-block {
+      height: 50vh;
+      min-height: 400px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-block {
+      height: 40vh;
+      min-height: 350px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .hero-block {
+      height: 695px;
+    }
+  }
+
 .hero-background {
   position: absolute;
   top: 0;
@@ -756,6 +1100,25 @@ p {
   max-width: none;
 }
 
+  /* Hero content responsive */
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content {
+      padding: 10px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .hero-content {
+      padding: 30px;
+    }
+  }
+
 .hero-main {
   display: flex;
   align-items: center;
@@ -778,6 +1141,19 @@ p {
   z-index: 3;
 }
 
+  /* Hero details responsive */
+  @media (max-width: 768px) {
+    .hero-details {
+      height: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-details {
+      height: 50px;
+    }
+  }
+
 .event-info {
   display: flex;
   justify-content: space-between;
@@ -787,6 +1163,22 @@ p {
   height: 100%;
   padding: 0 30px;
 }
+
+  /* Event info responsive */
+  @media (max-width: 768px) {
+    .event-info {
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .event-info {
+      padding: 0 10px;
+    }
+  }
 
 .event-date,
 .event-time,
@@ -798,7 +1190,15 @@ p {
   height: 100%;
 }
 
-
+  /* Event items responsive */
+  @media (max-width: 768px) {
+    .event-date,
+    .event-time,
+    .event-location {
+      flex: 1;
+      justify-content: center;
+    }
+  }
 
 .event-date .label {
   color: #FFFFFF;
@@ -838,6 +1238,60 @@ p {
   height: 27px;
 }
 
+  /* Event labels responsive */
+  @media (max-width: 1200px) {
+    .event-date .label,
+    .event-time .label,
+    .event-location .label {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .event-date .label,
+    .event-time .label,
+    .event-location .label {
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: auto;
+      height: auto;
+      line-height: 1.2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .event-date .label,
+    .event-time .label,
+    .event-location .label {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .event-date .label {
+      width: 296px;
+      height: 27px;
+      font-size: 23px;
+      letter-spacing: 3px;
+    }
+
+    .event-time .label {
+      width: 204px;
+      height: 38px;
+      font-size: 23px;
+      letter-spacing: 3px;
+    }
+
+    .event-location .label {
+      width: 324px;
+      height: 27px;
+      font-size: 23px;
+      letter-spacing: 3px;
+    }
+  }
+
 /* ==========================================================================
    Schedule Block Styles
    ========================================================================== */
@@ -850,6 +1304,19 @@ p {
   align-items: center;
   justify-content: center;
 }
+
+  /* Schedule block responsive */
+  @media (max-width: 1024px) {
+    .schedule-block {
+      padding: var(--space-2xl) var(--container-padding);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .schedule-block {
+      padding: var(--space-lg) var(--container-padding);
+    }
+  }
 
 .schedule-content {
   width: 100%;
@@ -865,7 +1332,6 @@ p {
   align-items: flex-start;
 }
 
-/* Schedule Item - Vertical Direction, Top Left Alignment, Item Spacing: 33 */
 .schedule-item {
   width: 100%;
   display: flex;
@@ -874,11 +1340,17 @@ p {
   margin-bottom: 33px;
 }
 
-.schedule-item:last-child {
-  margin-bottom: 0;
-}
+  /* Schedule item responsive */
+  @media (max-width: 480px) {
+    .schedule-item {
+      margin-bottom: 25px;
+    }
+  }
 
-/* Rule - Border Color: #0A6E6E, Stroke Alignment: Outside, Border Weight: 4 */
+  .schedule-item:last-child {
+    margin-bottom: 0;
+  }
+
 .schedule-rule {
   width: 100%;
   height: 4px;
@@ -887,7 +1359,13 @@ p {
   margin: 0 0 33px 0;
 }
 
-/* Item Container - Horizontal Direction, Middle Left Alignment, Item Spacing: 20 */
+  /* Schedule rule responsive */
+  @media (max-width: 480px) {
+    .schedule-rule {
+      margin-bottom: 20px;
+    }
+  }
+
 .item-container {
   width: 100%;
   display: flex;
@@ -896,7 +1374,14 @@ p {
   gap: 20px;
 }
 
-/* Meta Container - Vertical Direction, Top Left Alignment, Item Spacing: 7 */
+  /* Item container responsive */
+  @media (max-width: 768px) {
+    .item-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
 .meta-container {
   display: flex;
   flex-direction: column;
@@ -906,7 +1391,14 @@ p {
   width: 330px;
 }
 
-/* Time - Text Color: #032A2A, Font Family: Adelphi PE Variable, Font Weight: Display Bold, Font Size: 30, Line Height: 50 */
+  /* Meta container responsive */
+  @media (max-width: 768px) {
+    .meta-container {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
 .schedule-time {
   color: #032A2A;
   font-family: var(--font-family-primary);
@@ -914,7 +1406,25 @@ p {
   font-size: 26px;
 }
 
-/* Tags - Horizontal Direction, Top Left Alignment, Item Spacing: 10 */
+  /* Schedule time responsive */
+  @media (max-width: 1024px) {
+    .schedule-time {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .schedule-time {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .schedule-time {
+      font-size: 18px;
+    }
+  }
+
 .schedule-tags {
   display: flex;
   flex-direction: row;
@@ -923,7 +1433,6 @@ p {
   gap: 10px;
 }
 
-/* Tag - Border Color: #000000, Border Weight: 1, Border Radius: 4 */
 .schedule-tag {
   border: 1px solid #000000;
   border-radius: 4px;
@@ -937,7 +1446,29 @@ p {
   white-space: nowrap;
 }
 
-/* Details - Vertical Direction, Top Left Alignment, Item Spacing: 14 */
+  /* Schedule tag responsive */
+  @media (max-width: 1024px) {
+    .schedule-tag {
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .schedule-tag {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .schedule-tag {
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      padding: 1px 8px;
+    }
+  }
+
 .schedule-details {
   flex: 1;
   display: flex;
@@ -946,7 +1477,6 @@ p {
   gap: 14px;
 }
 
-/* Title - Text Color: #000000, Font Family: Adelphi PE Variable, Font Weight: Extrabold, Font Size: 30, Letter Spacing: 3 */
 .schedule-title {
   color: #000000;
   font-family: var(--font-family-primary);
@@ -957,7 +1487,27 @@ p {
   margin: 0;
 }
 
-/* Description - Text Color: #000000, Font Family: Adelphi PE Variable, Font Weight: Regular, Font Size: 30, Letter Spacing: 3 */
+  /* Schedule title responsive */
+  @media (max-width: 1024px) {
+    .schedule-title {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .schedule-title {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .schedule-title {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+  }
+
 .schedule-description {
   color: #000000;
   font-family: var(--font-family-primary);
@@ -966,6 +1516,28 @@ p {
   margin: 0;
   line-height: 1.4;
 }
+
+  /* Schedule description responsive */
+  @media (max-width: 1024px) {
+    .schedule-description {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .schedule-description {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .schedule-description {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+  }
 
 /* ==========================================================================
    Accessibility
@@ -1018,206 +1590,3 @@ p {
   animation-play-state: paused;
 }
 
-/* ==========================================================================
-   Responsive Design - Mobile First
-   ========================================================================== */
-
-/* Base breakpoint utilities */
-@media (min-width: 768px) {
-  :root {
-    --container-padding: var(--space-lg);
-  }
-  
-  .content-block {
-    padding: var(--space-2xl) var(--container-padding);
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --container-padding: var(--space-xl);
-  }
-  
-  .content-block {
-    padding: var(--space-3xl) var(--container-padding);
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --container-padding: var(--space-2xl);
-  }
-}
-
-/* Large screen breakpoint - 1200px down */
-@media (max-width: 1200px) {
-  /* Header adjustments */
-  .header-content { padding: 0 30px; }
-  .nav-list { gap: 40px; }
-  .nav-link { font-size: 16px; letter-spacing: 2px; padding: 6px 12px; }
-  .purchase-button { width: 180px; height: 30px; font-size: 14px; letter-spacing: 2px; }
-  
-  /* Hero adjustments */
-  .hero-block { height: 60vh; min-height: 500px; }
-  .event-date .label, .event-time .label, .event-location .label { font-size: 18px; letter-spacing: 2px; }
-}
-
-/* Medium-Large breakpoint - 1100px down */
-@media (max-width: 1100px) {
-  .nav-list { gap: 20px; }
-  .nav-link { padding: 6px 10px; }
-}
-
-/* Medium breakpoint - 1024px down */
-@media (max-width: 1024px) {
-  /* Intro adjustments */
-  .intro-block { padding: 40px 30px; }
-  .intro-content { gap: 50px; }
-  .intro-image { width: 350px; height: 250px; }
-  .intro-description { font-size: 15px; }
-  .intro-button { height: 45px; font-size: 15px; letter-spacing: 2px; }
-  
-  /* Speakers adjustments */
-  .speakers-content { padding: 20px 30px; }
-  .speakers-grid { gap: 20px; }
-  .speaker-card { width: 250px; height: 320px; }
-  .speaker-name { font-size: 20px; letter-spacing: 2px; }
-  .workshop-section { height: 250px; }
-  .workshop-title { font-size: 36px; }
-  .speakers-scrolling-text, .schedule-scrolling-text { font-size: 35px; }
-  
-  /* Schedule adjustments */
-  .schedule-block { padding: var(--space-2xl) var(--container-padding); }
-  .schedule-time { font-size: 22px; }
-  .schedule-tag { font-size: 14px; letter-spacing: 2px; }
-  .schedule-title { font-size: 22px;  }
-  .schedule-description { font-size: 18px; }
-}
-
-/* Hide navigation breakpoint - 900px down */
-@media (max-width: 900px) {
-  .header-nav { display: none; }
-  .header-content { justify-content: space-between; }
-}
-
-/* Tablet breakpoint - 768px down */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .header-block { height: 80px; }
-  .page-container { margin-top: 80px; }
-  .header-content { padding: 0 20px; }
-  .nav-link { font-size: 14px; letter-spacing: 1px; padding: 4px 8px; }
-  .purchase-button { width: 160px; height: 28px; font-size: 12px; letter-spacing: 1px; }
-  .header-genux-logo { width: 85px; height: 34px; }
-  
-  /* Intro adjustments - switch to vertical layout */
-  .intro-block { padding: 30px 20px; height: auto; min-height: auto; }
-  .intro-content { flex-direction: column; gap: 30px; align-items: center; }
-  .intro-image { width: 100%; max-width: 400px; height: 250px; order: -1; }
-  .intro-text-content { width: 100%; align-items: center; text-align: center; gap: 25px; }
-  .intro-text-block { align-items: center; text-align: center; gap: 15px; }
-  .intro-title { font-size: var(--font-size-xl); text-align: center; }
-  .intro-description { font-size: 14px; text-align: center; }
-  .intro-button { height: 40px; font-size: 14px; letter-spacing: 1px; }
-  
-  /* Speakers adjustments */
-  .speakers-content { padding: 15px 20px; }
-  .speakers-grid { gap: 15px; justify-content: center; }
-  .speaker-card { width: 220px; height: 280px; }
-  .speaker-name { font-size: 18px; letter-spacing: 1px; }
-  .workshop-section { height: 200px; }
-  .workshop-title { font-size: 30px; }
-  .speakers-scrolling-text, .schedule-scrolling-text { font-size: 28px; }
-  .speakers-scrolling-container { height: 80px; }
-  .schedule-scrolling-container { height: 76px; }
-  
-  /* Hero adjustments */
-  .hero-block { height: 50vh; min-height: 400px; }
-  .hero-content { padding: 15px; }
-  .hero-details { height: 60px; }
-  .event-info { flex-direction: row; gap: 5px; align-items: center; padding: 0 15px; }
-  .event-date, .event-time, .event-location { flex: 1; justify-content: center; }
-  .event-date .label, .event-time .label, .event-location .label { 
-    font-size: 16px; letter-spacing: 1px; width: auto; height: auto; line-height: 1.2; 
-  }
-  
-  /* Schedule adjustments - switch to vertical layout */
-  .item-container { flex-direction: column; gap: 15px; }
-  .meta-container { min-width: auto; width: 100%; }
-  .schedule-time { font-size: 20px; }
-  .schedule-tag { font-size: 12px; letter-spacing: 1px; }
-  .schedule-title { font-size: 20px; letter-spacing: 1px; }
-  .schedule-description { font-size: 16px; letter-spacing: 1px; }
-}
-
-/* Mobile breakpoint - 480px down */
-@media (max-width: 480px) {
-  /* Header adjustments */
-  .header-block { height: 70px; }
-  .page-container { margin-top: 70px; }
-  .header-content { padding: 0 15px; }
-  .purchase-button { width: 140px; height: 26px; font-size: 11px; letter-spacing: 0.5px; }
-  .header-genux-logo { width: 70px; height: 28px; }
-  
-  /* Intro adjustments */
-  .intro-block { padding: 20px 15px; }
-  .intro-content { gap: 20px; }
-  .intro-image { height: 200px; }
-  .intro-title { font-size: var(--font-size-lg); }
-  .intro-description { font-size: 13px; }
-  .intro-button { height: 36px; font-size: 12px; letter-spacing: 0.5px; }
-  
-  /* Speakers adjustments - two per row */
-  .speakers-content { padding: 10px 15px; }
-  .speakers-grid { gap: 10px; justify-content: center; max-width: 100%; }
-  .speaker-card { width: calc(50% - 5px); max-width: 160px; height: 200px; }
-  .speaker-name { font-size: 14px; letter-spacing: 0.5px; line-height: 20px; }
-  .speaker-name-container { padding: 8px; }
-  .workshop-section { height: 150px; width: calc(100% - 20px); }
-  .workshop-title { font-size: 24px; }
-  .speakers-scrolling-text, .schedule-scrolling-text { font-size: 22px; }
-  .speakers-scrolling-container { height: 60px; }
-  .schedule-scrolling-container { height: 56px; }
-  
-  /* Hero adjustments */
-  .hero-block { height: 40vh; min-height: 350px; }
-  .hero-content { padding: 10px; }
-  .hero-details { height: 50px; }
-  .event-info { padding: 0 10px; }
-  .event-date .label, .event-time .label, .event-location .label { 
-    font-size: 14px; letter-spacing: 0.5px; 
-  }
-  
-  /* Schedule adjustments - mobile optimizations */
-  .schedule-block { padding: var(--space-lg) var(--container-padding); }
-  .schedule-item { margin-bottom: 25px; }
-  .schedule-rule { margin-bottom: 20px; }
-  .schedule-time { font-size: 18px; }
-  .schedule-tag { font-size: 10px; letter-spacing: 0.5px; padding: 1px 8px; }
-  .schedule-title { font-size: 18px; letter-spacing: 0.5px; }
-  .schedule-description { font-size: 14px; letter-spacing: 0.5px; line-height: 1.3; }
-}
-
-/* Large desktop breakpoint - 1400px down */
-@media (max-width: 1400px) {
-  .intro-block { padding: 0 40px; height: auto; min-height: 400px; }
-  .intro-content { gap: 80px; }
-  .intro-image { width: 400px; height: 300px; }
-  .intro-text-content { width: auto; flex: 1; }
-  .intro-title { height: auto; font-size: var(--font-size-2xl); }
-  .intro-description { height: auto; font-size: 16px; }
-  
-  .speakers-block { height: auto; min-height: 800px; }
-  .speakers-content { height: auto; padding: 30px 40px; }
-  .speakers-grid { gap: 25px; }
-  .speaker-card { width: 280px; height: 360px; }
-  .workshop-section { width: 100%; height: 300px; }
-  .workshop-title { font-size: 40px; }
-  .speakers-scrolling-text, .schedule-scrolling-text { font-size: 40px; }
-}
-
-/* Ultra-wide desktop - 1920px up */
-@media (min-width: 1920px) {
-  .hero-block { height: 695px; }
-  .hero-content { padding: 30px; }
-}
