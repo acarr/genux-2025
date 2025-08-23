@@ -8,7 +8,7 @@
 ## 2. FAQ
 - **Height:** 27  
 - **Width:** 65  
-- **Text Color:** #FFFFFF  
+- **Text Color:**rgb(21, 21, 21)  
 - **Text Style:** Headers – 18 pt  
 
 ## 3. SCHEDULE
