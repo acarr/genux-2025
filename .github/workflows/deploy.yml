@@ -16,17 +16,17 @@ jobs:
       with:
         fetch-depth: 0
     
-    - name: Setup Node.js (if needed for build)
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
-      # Uncomment if you have package.json and need to build
-      # - name: Install dependencies
-      #   run: npm ci
-      # 
-      # - name: Build project
-      #   run: npm run build
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build project
+      run: npm run build
     
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -37,17 +37,10 @@ jobs:
         protocol: ftps
         port: 21
         server-dir: ${{ secrets.FTP_SERVER_DIR }}
-        local-dir: ./
+        local-dir: ./dist/
         exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.github/**
-          **/reference/**
-          **/*.md
           **/.DS_Store
           **/Thumbs.db
-          **/.env*
         dry-run: false
         log-level: info
         security: loose
