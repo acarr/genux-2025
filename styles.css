@@ -1944,7 +1944,6 @@ p {
   font-family: var(--font-family-primary);
   font-weight: 400; /* Regular */
   font-size: 30px;
-  letter-spacing: 3px;
   line-height: 1.2;
   flex: 1;
   text-align: left;
@@ -2010,7 +2009,6 @@ p {
   
   .faq-question-text {
     font-size: 26px;
-    letter-spacing: 2px;
   }
   
   .faq-answer-text {
@@ -2033,7 +2031,6 @@ p {
   
   .faq-question-text {
     font-size: 22px;
-    letter-spacing: 1px;
   }
   
   .faq-answer-text {
@@ -2073,7 +2070,6 @@ p {
   
   .faq-question-text {
     font-size: 20px;
-    letter-spacing: 0.5px;
   }
   
   .faq-answer-text {
@@ -2101,7 +2097,6 @@ p {
   
   .faq-question-text {
     font-size: 18px;
-    letter-spacing: 0px;
   }
   
   .faq-answer-text {
