@@ -9,6 +9,7 @@ jobs:
   deploy:
     name: Deploy to FTP Server
     runs-on: ubuntu-latest
+    environment: Staging
     
     steps:
     - name: Checkout code
@@ -42,7 +43,7 @@ jobs:
           **/.DS_Store
           **/Thumbs.db
         dry-run: false
-        log-level: info
+        log-level: standard
         security: loose
     
     - name: Notify deployment status
