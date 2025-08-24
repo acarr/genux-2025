@@ -252,24 +252,8 @@ class BlockManager {
     // Initialize section scrolling ticker elements (CSS-only animations)
     const sectionScrollingContainers = document.querySelectorAll('.scrolling-section-container');
     
-    sectionScrollingContainers.forEach(container => {
-      const ticker = container.querySelector('.scrolling-ticker');
-      
-      // Add hover pause functionality to the container
-      if (container.dataset.scrollingPause !== 'false') {
-        container.addEventListener('mouseenter', () => {
-          if (ticker) {
-            ticker.style.animationPlayState = 'paused';
-          }
-        });
-        
-        container.addEventListener('mouseleave', () => {
-          if (ticker) {
-            ticker.style.animationPlayState = 'running';
-          }
-        });
-      }
-    });
+    // Scrolling tickers are now purely CSS-driven with no hover interactions
+    // This ensures continuous, uninterrupted scrolling animations
   }
   
   addScrollListener() {

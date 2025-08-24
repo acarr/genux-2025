@@ -376,9 +376,6 @@ p {
 }
 
 /* Accessibility for scrolling text */
-.scrolling-ticker:hover {
-  animation-play-state: paused;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .scrolling-ticker {
@@ -522,6 +519,8 @@ p {
   display: flex;
   align-items: center;
   height: 100%;
+  width: 220px;
+  flex-shrink: 0;
 }
 
 .header-genux-logo {
@@ -531,7 +530,25 @@ p {
 }
 
   /* Logo responsive */
+  @media (max-width: 1200px) {
+    .header-logo {
+      width: 180px;
+    }
+    
+    /* .header-cta {
+      width: 180px;
+    } */
+  }
+
   @media (max-width: 768px) {
+    .header-logo {
+      width: 160px;
+    }
+    
+    /* .header-cta {
+      width: 160px;
+    } */
+    
     .header-genux-logo {
       width: 85px;
       height: 34px;
@@ -539,6 +556,14 @@ p {
   }
 
   @media (max-width: 480px) {
+    .header-logo {
+      width: 140px;
+    }
+    
+    /* .header-cta {
+      width: 140px;
+    } */
+    
     .header-genux-logo {
       width: 70px;
       height: 28px;
@@ -640,7 +665,9 @@ p {
 .header-cta {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 100%;
+  flex-shrink: 0;
 }
 
 .purchase-button {
@@ -1176,7 +1203,7 @@ p {
   right: 0;
   width: 100%;
   height: 70px;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-darker-teal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1222,9 +1249,7 @@ p {
     }
   }
 
-.event-date,
-.event-time,
-.event-location {
+.event-item {
   flex: 1;
   display: flex;
   align-items: center;
@@ -1232,107 +1257,39 @@ p {
   height: 100%;
 }
 
-  /* Event items responsive */
-  @media (max-width: 768px) {
-    .event-date,
-    .event-time,
-    .event-location {
-      flex: 1;
-      justify-content: center;
-    }
-  }
-
-.event-date .label {
+.event-label {
   color: #FFFFFF;
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
   font-weight: bold;
-  font-size: 23px;
+  font-size: 20px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 27px;
-}
-
-.event-time .label {
-  color: #FFFFFF;
-  font-family: var(--font-family-secondary);
-  font-weight: bold;
-  font-size: 23px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 204px;
-  height: 38px;
-}
-
-.event-location .label {
-  color: #FFFFFF;
-  font-family: var(--font-family-secondary);
-  font-weight: bold;
-  font-size: 23px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 324px;
-  height: 27px;
+  height: auto;
 }
 
   /* Event labels responsive */
   @media (max-width: 1200px) {
-    .event-date .label,
-    .event-time .label,
-    .event-location .label {
+    .event-label {
       font-size: 18px;
-      letter-spacing: 2px;
     }
   }
 
   @media (max-width: 768px) {
-    .event-date .label,
-    .event-time .label,
-    .event-location .label {
+    .event-label {
       font-size: 16px;
-      letter-spacing: 1px;
-      width: auto;
-      height: auto;
       line-height: 1.2;
     }
   }
 
   @media (max-width: 480px) {
-    .event-date .label,
-    .event-time .label,
-    .event-location .label {
+    .event-label {
       font-size: 14px;
-      letter-spacing: 0.5px;
     }
   }
 
-  @media (min-width: 1920px) {
-    .event-date .label {
-      width: 296px;
-      height: 27px;
-      font-size: 23px;
-      letter-spacing: 3px;
-    }
 
-    .event-time .label {
-      width: 204px;
-      height: 38px;
-      font-size: 23px;
-      letter-spacing: 3px;
-    }
-
-    .event-location .label {
-      width: 324px;
-      height: 27px;
-      font-size: 23px;
-      letter-spacing: 3px;
-    }
-  }
 
 /* ==========================================================================
    Hosts Block Styles
@@ -2497,6 +2454,7 @@ p {
     transition: none;
   }
 }
+
 
 
 
