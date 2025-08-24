@@ -233,7 +233,7 @@ class BlockManager {
   }
   
   initializeScrollingTexts() {
-    // Initialize scrolling text elements
+    // Initialize general scrolling text elements (data-scrolling-text)
     const scrollingElements = document.querySelectorAll('[data-scrolling-text]');
     
     scrollingElements.forEach(element => {
@@ -247,6 +247,28 @@ class BlockManager {
       });
       
       this.scrollingTexts.push(scrollingText);
+    });
+    
+    // Initialize section scrolling ticker elements (CSS-only animations)
+    const sectionScrollingContainers = document.querySelectorAll('.scrolling-section-container');
+    
+    sectionScrollingContainers.forEach(container => {
+      const ticker = container.querySelector('.scrolling-ticker');
+      
+      // Add hover pause functionality to the container
+      if (container.dataset.scrollingPause !== 'false') {
+        container.addEventListener('mouseenter', () => {
+          if (ticker) {
+            ticker.style.animationPlayState = 'paused';
+          }
+        });
+        
+        container.addEventListener('mouseleave', () => {
+          if (ticker) {
+            ticker.style.animationPlayState = 'running';
+          }
+        });
+      }
     });
   }
   

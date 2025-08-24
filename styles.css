@@ -307,6 +307,86 @@ p {
 }
 
 /* ==========================================================================
+   Scrolling Text Section Components
+   ========================================================================== */
+
+.scrolling-section-container {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-darker-teal);
+  display: flex;
+  align-items: center;
+}
+
+.scrolling-ticker {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.scrolling-ticker-item {
+  display: inline-block;
+  padding: 0 10px;
+  font-family: var(--font-family-secondary);
+  font-weight: 900;
+  font-size: 50px;
+  letter-spacing: 3px;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+}
+
+.scrolling-ticker-item:nth-child(odd) {
+  color: #0A6E6E;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive scrolling text */
+@media (max-width: 1024px) {
+  .scrolling-ticker-item {
+    font-size: 40px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrolling-ticker-item {
+    font-size: 35px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolling-ticker-item {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+  
+  .scrolling-section-container {
+    height: 80px;
+  }
+}
+
+/* Accessibility for scrolling text */
+.scrolling-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrolling-ticker {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
    Page Structure
    ========================================================================== */
 
@@ -876,41 +956,7 @@ p {
   overflow: hidden;
 }
 
-.speakers-scrolling-container {
-  height: 100px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: transparent;
-}
 
-.schedule-scrolling-container {
-  height: 96px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: transparent;
-}
-
-.speakers-scrolling-text,
-.schedule-scrolling-text {
-  height: 66px;
-  white-space: nowrap;
-  font-family: var(--font-family-secondary);
-  font-weight: 900;
-  font-size: 50px;
-  letter-spacing: 3px;
-  color: var(--color-cyan);
-  animation: scroll-horizontal 20s linear infinite;
-  display: flex;
-  align-items: center;
-}
-
-.schedule-scrolling-text {
-  height: 80px;
-}
 
 .speakers-content {
   flex: 1;
@@ -1305,27 +1351,7 @@ p {
   overflow: hidden;
 }
 
-.hosts-scrolling-container {
-  height: 100px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: transparent;
-}
 
-.hosts-scrolling-text {
-  height: 66px;
-  white-space: nowrap;
-  font-family: var(--font-family-secondary);
-  font-weight: 900;
-  font-size: 50px;
-  letter-spacing: 3px;
-  color: var(--color-cyan);
-  animation: scroll-horizontal 20s linear infinite;
-  display: flex;
-  align-items: center;
-}
 
 .hosts-content {
   width: 100%;
@@ -1481,9 +1507,7 @@ p {
     font-size: 18px;
   }
   
-  .hosts-scrolling-text {
-    font-size: 40px;
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -1528,9 +1552,7 @@ p {
     text-align: center;
   }
   
-  .hosts-scrolling-text {
-    font-size: 35px;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -1561,25 +1583,10 @@ p {
     line-height: 1.3;
   }
   
-  .hosts-scrolling-text {
-    font-size: 28px;
-  }
-  
-  .hosts-scrolling-container {
-    height: 80px;
-  }
+
 }
 
-/* Accessibility for Hosts */
-.hosts-scrolling-text:hover {
-  animation-play-state: paused;
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .hosts-scrolling-text {
-    animation: none;
-  }
-}
 
 /* ==========================================================================
    Schedule Block Styles
@@ -1841,27 +1848,7 @@ p {
   overflow: hidden;
 }
 
-.faqs-scrolling-container {
-  height: 100px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background: transparent;
-}
 
-.faqs-scrolling-text {
-  height: 66px;
-  white-space: nowrap;
-  font-family: var(--font-family-secondary);
-  font-weight: 900;
-  font-size: 50px;
-  letter-spacing: 3px;
-  color: var(--color-cyan);
-  animation: scroll-horizontal 25s linear infinite;
-  display: flex;
-  align-items: center;
-}
 
 .faqs-content {
   width: 100%;
@@ -2038,9 +2025,7 @@ p {
     padding-right: 40px;
   }
   
-  .faqs-scrolling-text {
-    font-size: 40px;
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -2081,9 +2066,7 @@ p {
     margin-bottom: 20px;
   }
   
-  .faqs-scrolling-text {
-    font-size: 35px;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -2110,25 +2093,11 @@ p {
     margin-left: 15px;
   }
   
-  .faqs-scrolling-text {
-    font-size: 28px;
-  }
-  
-  .faqs-scrolling-container {
-    height: 80px;
-  }
+
 }
 
 /* Accessibility for FAQs */
-.faqs-scrolling-text:hover {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .faqs-scrolling-text {
-    animation: none;
-  }
-  
   .faq-icon {
     transition: none;
   }
@@ -2172,9 +2141,7 @@ p {
     transition-duration: 0.01ms !important;
   }
   
-  .scrolling-text-inner,
-  .speakers-scrolling-text,
-  .schedule-scrolling-text {
+  .scrolling-text-inner {
     animation: none;
   }
   
@@ -2183,9 +2150,5 @@ p {
   }
 }
 
-/* Pause animations on hover for accessibility */
-.speakers-scrolling-text:hover,
-.schedule-scrolling-text:hover {
-  animation-play-state: paused;
-}
+
 
