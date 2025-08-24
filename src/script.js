@@ -397,11 +397,58 @@ ready(() => {
 // Global API for external use
 // ==========================================================================
 
+// Navigation smooth scrolling
+class NavigationManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    // Add smooth scrolling to all navigation links
+    const navLinks = document.querySelectorAll('.nav-link, .purchase-button');
+    navLinks.forEach(link => {
+      link.addEventListener('click', this.handleNavClick.bind(this));
+    });
+  }
+
+  handleNavClick(event) {
+    const href = event.currentTarget.getAttribute('href');
+    
+    // Only handle internal links (starting with #)
+    if (href && href.startsWith('#')) {
+      event.preventDefault();
+      
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        this.smoothScrollToElement(targetElement);
+      }
+    }
+  }
+
+  smoothScrollToElement(element) {
+    const headerHeight = document.querySelector('.header-block')?.offsetHeight || 0;
+    const targetPosition = element.offsetTop - headerHeight;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Initialize navigation manager
+document.addEventListener('DOMContentLoaded', () => {
+  window.navigationManager = new NavigationManager();
+});
+
 // Expose useful functions globally
 window.GENUX = {
   ScrollingText,
   BlockManager,
   FAQAccordion,
+  NavigationManager,
   createScrollObserver,
   debounce,
   throttle,
@@ -410,6 +457,7 @@ window.GENUX = {
   scrollToBlock: (index) => window.blockManager?.scrollToBlock(index),
   getCurrentBlock: () => window.blockManager?.getCurrentBlock(),
   getScrollingTexts: () => window.blockManager?.getScrollingTexts(),
+  scrollToSection: (sectionId) => window.navigationManager?.smoothScrollToElement(document.getElementById(sectionId)),
   
   // FAQ functions
   openFAQ: (index) => window.faqAccordion?.openFAQ(index),
