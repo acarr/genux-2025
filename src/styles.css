@@ -1196,34 +1196,20 @@ p {
   height: auto;
 }
 
-.hero-details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* ==========================================================================
+   Shared Details Layout (Hero & Footer)
+   ========================================================================== */
+
+.details-container {
   width: 100%;
   height: 70px;
   background: var(--color-darker-teal);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
 }
 
-  /* Hero details responsive */
-  @media (max-width: 768px) {
-    .hero-details {
-      height: 60px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-details {
-      height: 50px;
-    }
-  }
-
-.event-info {
+.details-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1233,23 +1219,7 @@ p {
   padding: 0 30px;
 }
 
-  /* Event info responsive */
-  @media (max-width: 768px) {
-    .event-info {
-      flex-direction: row;
-      gap: 5px;
-      align-items: center;
-      padding: 0 15px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .event-info {
-      padding: 0 10px;
-    }
-  }
-
-.event-item {
+.details-item {
   flex: 1;
   display: flex;
   align-items: center;
@@ -1257,7 +1227,7 @@ p {
   height: 100%;
 }
 
-.event-label {
+.details-content {
   color: #FFFFFF;
   font-family: var(--font-family-primary);
   font-weight: bold;
@@ -1267,27 +1237,61 @@ p {
   align-items: center;
   justify-content: center;
   height: auto;
+  text-decoration: none;
+  transition: var(--transition-fast);
 }
 
-  /* Event labels responsive */
-  @media (max-width: 1200px) {
-    .event-label {
-      font-size: 18px;
-    }
-  }
+.details-content:hover {
+  color: var(--color-bright-green);
+}
 
-  @media (max-width: 768px) {
-    .event-label {
-      font-size: 16px;
-      line-height: 1.2;
-    }
-  }
+/* Hero-specific styles */
+.hero-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
 
-  @media (max-width: 480px) {
-    .event-label {
-      font-size: 14px;
-    }
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .details-content {
+    font-size: 18px;
   }
+}
+
+@media (max-width: 768px) {
+  .details-container {
+    height: 60px;
+  }
+  
+  .details-info {
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    padding: 0 15px;
+  }
+  
+  .details-content {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-container {
+    height: 50px;
+  }
+  
+  .details-info {
+    padding: 0 10px;
+  }
+  
+  .details-content {
+    font-size: 14px;
+  }
+}
 
 
 
