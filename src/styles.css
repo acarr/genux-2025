@@ -1830,11 +1830,15 @@ p {
 
 .faqs-container {
   width: 100%;
-  max-width: 1448px;
+  max-width: var(--container-max-width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
+}
+
+.faqs-block .scrolling-ticker {
+  animation-duration: 90s;
 }
 
 .faq-header {
@@ -2114,7 +2118,7 @@ p {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1594px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -2143,7 +2147,7 @@ p {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
 }
