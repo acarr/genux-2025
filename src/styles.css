@@ -1937,6 +1937,14 @@ p {
   padding-right: 44px; /* Account for icon space */
 }
 
+.faq-answer-text p {
+  margin: 0 0 12px 0;
+}
+
+.faq-answer-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* FAQs Block Responsive Styles */
 @media (max-width: 1400px) {
   .faqs-content {
