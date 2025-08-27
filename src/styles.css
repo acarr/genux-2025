@@ -42,6 +42,9 @@
   --space-2xl: 4rem;
   --space-3xl: 6rem;
   
+  /* Design elements */
+  --chisel-corner-size: 6px;
+  
   /* Layout */
   --container-max-width: 1200px;
   --container-padding: var(--space-sm);
@@ -687,6 +690,16 @@ p {
   padding: 0 10px;
   font-size: 16px;
   letter-spacing: 3px;
+  clip-path: polygon(
+    var(--chisel-corner-size) 0,
+    calc(100% - var(--chisel-corner-size)) 0,
+    100% var(--chisel-corner-size),
+    100% calc(100% - var(--chisel-corner-size)),
+    calc(100% - var(--chisel-corner-size)) 100%,
+    var(--chisel-corner-size) 100%,
+    0 calc(100% - var(--chisel-corner-size)),
+    0 var(--chisel-corner-size)
+  );
 }
 
   /* Purchase button responsive */
@@ -823,6 +836,16 @@ p {
   font-size: 17px;
   letter-spacing: 3px;
   margin-top: 20px;
+  clip-path: polygon(
+    var(--chisel-corner-size) 0,
+    calc(100% - var(--chisel-corner-size)) 0,
+    100% var(--chisel-corner-size),
+    100% calc(100% - var(--chisel-corner-size)),
+    calc(100% - var(--chisel-corner-size)) 100%,
+    var(--chisel-corner-size) 100%,
+    0 calc(100% - var(--chisel-corner-size)),
+    0 var(--chisel-corner-size)
+  );
 }
 
 .intro-button:hover,
