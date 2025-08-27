@@ -537,20 +537,14 @@ p {
     .header-logo {
       width: 180px;
     }
-    
-    /* .header-cta {
-      width: 180px;
-    } */
+
   }
 
   @media (max-width: 768px) {
     .header-logo {
       width: 160px;
     }
-    
-    /* .header-cta {
-      width: 160px;
-    } */
+
     
     .header-genux-logo {
       width: 85px;
@@ -563,9 +557,7 @@ p {
       width: 140px;
     }
     
-    /* .header-cta {
-      width: 140px;
-    } */
+
     
     .header-genux-logo {
       width: 70px;
@@ -705,7 +697,6 @@ p {
   /* Purchase button responsive */
   @media (max-width: 1200px) {
     .purchase-button {
-      width: 180px;
       height: 30px;
       font-size: 14px;
       letter-spacing: 2px;
@@ -714,7 +705,6 @@ p {
 
   @media (max-width: 768px) {
     .purchase-button {
-      width: 160px;
       height: 28px;
       font-size: 12px;
       letter-spacing: 1px;
@@ -723,7 +713,6 @@ p {
 
   @media (max-width: 480px) {
     .purchase-button {
-      width: 140px;
       height: 26px;
       font-size: 11px;
       letter-spacing: 0.5px;
