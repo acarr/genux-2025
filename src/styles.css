@@ -2201,6 +2201,14 @@ p {
   align-items: center;
 }
 
+.supporting-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
 .supporting-logo {
   display: flex;
   justify-content: center;
@@ -2210,6 +2218,12 @@ p {
 .adobe-logo {
   height: 35px;
   width: 146px;
+  object-fit: contain;
+}
+
+.simplisafe-logo {
+  height: 35px;
+  width: auto;
   object-fit: contain;
 }
 
@@ -2410,9 +2424,17 @@ p {
     height: 60px;
   } */
   
+  .supporting-logos {
+    gap: 30px;
+  }
+  
   .adobe-logo {
     height: 28px;
     width: 116px;
+  }
+  
+  .simplisafe-logo {
+    height: 28px;
   }
 }
 
