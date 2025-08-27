@@ -1040,7 +1040,7 @@ p {
   position: relative;
   transition: transform var(--transition-medium), box-shadow var(--transition-medium);
   width: 335px;
-  height: 433px;
+  height: auto;
 }
 
 .speaker-card:hover {
@@ -1106,6 +1106,31 @@ p {
   line-height: 35px;
   text-align: center;
   margin: 0;
+}
+
+  /* Speakers block responsive */
+@media (max-width: 1200px) {
+  .speaker-card {
+    width: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .speakers-content {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+  .speaker-card {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .speaker-card {
+    width: 160px;
+  }
 }
 
 /* ==========================================================================
