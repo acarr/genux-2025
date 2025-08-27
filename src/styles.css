@@ -20,8 +20,8 @@
   --color-cyan: #00FFFF;
 
   /* Typography */
-  --font-family-primary: 'Adelphi PE Variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
-  --font-family-secondary: 'Stinger', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-primary: 'adelphi-pe-variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-secondary: 'stinger-variable', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
   
   /* Font sizes - fluid typography */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -2175,7 +2175,7 @@ p {
 }
 
 .sponsor-logo-image {
-  height: 103px;
+  height: 90px;
   width: 100%;
   object-fit: contain;
 }
