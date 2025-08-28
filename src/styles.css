@@ -1010,7 +1010,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 90px;
+  padding: 0 90px 40px;
 }
 
 .speakers-background {
@@ -1125,7 +1125,7 @@ p {
 
 @media (max-width: 1024px) {
     .speakers-content {
-        padding: 40px 30px;
+        padding: 0 30px 40px;
     }
 }
 
@@ -1589,6 +1589,45 @@ p {
 }
 
 
+/* Triangle Element */
+.triangle-container {
+  --triangle-size: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 20px;
+  background-color: var(--color-darker-teal);
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: var(--triangle-size) solid transparent;
+  border-right: var(--triangle-size) solid transparent;
+  border-top: var(--triangle-size) solid #ff0000;
+}
+
+/* Responsive triangle sizing */
+@media (max-width: 1024px) {
+  .triangle-container {
+    --triangle-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .triangle-container {
+    --triangle-size: 40px;
+    padding: 0 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .triangle-container {
+    --triangle-size: 30px;
+    padding: 0 0 10px;
+  }
+}
 
 /* ==========================================================================
    Schedule Block Styles
