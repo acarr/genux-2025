@@ -358,23 +358,31 @@ p {
     font-size: 40px;
     padding: 0 10px;
   }
+  
+  .scrolling-section-container {
+    height: 80px;
+  }
 }
 
 @media (max-width: 768px) {
   .scrolling-ticker-item {
-    font-size: 35px;
+    font-size: 32px;
     padding: 0 10px;
+  }
+  
+  .scrolling-section-container {
+    height: 64px;
   }
 }
 
 @media (max-width: 480px) {
   .scrolling-ticker-item {
-    font-size: 28px;
+    font-size: 26px;
     padding: 0 10px;
   }
   
   .scrolling-section-container {
-    height: 80px;
+    height: 52px;
   }
 }
 
@@ -714,7 +722,7 @@ p {
   @media (max-width: 480px) {
     .purchase-button {
       height: 26px;
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.5px;
     }
   }
@@ -822,7 +830,7 @@ p {
   color: var(--color-bright-green);
   height: 40px;
   padding: 10px 20px;
-  font-size: 17px;
+  font-size: 18px;
   letter-spacing: 3px;
   margin-top: 20px;
   clip-path: polygon(
@@ -891,12 +899,12 @@ p {
     }
 
     .intro-description {
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .intro-button {
       height: 45px;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 2px;
     }
   }
@@ -969,7 +977,7 @@ p {
     }
 
     .intro-description {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .intro-button {
@@ -1078,7 +1086,7 @@ p {
   color: #FFFFFF;
   font-family: var(--font-family-primary);
   font-weight: bold;
-  font-size: 25px;
+  font-size: 24px;
   letter-spacing: 3px;
   line-height: 35px;
   text-align: center;
@@ -1425,7 +1433,7 @@ p {
   color: #FFFFFF;
   font-family: var(--font-family-primary);
   font-weight: bold;
-  font-size: 26px;
+  font-size: 24px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -1463,7 +1471,7 @@ p {
   }
   
   .host-name {
-    font-size: 26px;
+    font-size: 24px;
   }
   
   .host-description {
@@ -1494,7 +1502,7 @@ p {
   }
   
   .host-name {
-    font-size: 22px;
+    font-size: 24px;
   }
   
   .host-description {
@@ -1693,13 +1701,13 @@ p {
   color: #032A2A;
   font-family: var(--font-family-primary);
   font-weight: bold;
-  font-size: 26px;
+  font-size: 24px;
 }
 
   /* Schedule time responsive */
   @media (max-width: 1024px) {
     .schedule-time {
-      font-size: 22px;
+      font-size: 24px;
     }
   }
 
@@ -1771,7 +1779,7 @@ p {
   color: #000000;
   font-family: var(--font-family-primary);
   font-weight: 800;
-  font-size: 26px;
+  font-size: 24px;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin: 0;
@@ -1780,7 +1788,7 @@ p {
   /* Schedule title responsive */
   @media (max-width: 1024px) {
     .schedule-title {
-      font-size: 22px;
+      font-size: 24px;
     }
   }
 
@@ -1928,7 +1936,7 @@ p {
   color: #111111;
   font-family: var(--font-family-primary);
   font-weight: 400; /* Regular */
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.2;
   flex: 1;
   text-align: left;
@@ -1997,11 +2005,11 @@ p {
   }
   
   .faq-title {
-    font-size: 45px;
+    font-size: 50px;
   }
   
   .faq-question-text {
-    font-size: 26px;
+    font-size: 24px;
   }
   
   .faq-answer-text {
@@ -2019,11 +2027,11 @@ p {
   }
   
   .faq-title {
-    font-size: 40px;
+    font-size: 50px;
   }
   
   .faq-question-text {
-    font-size: 22px;
+    font-size: 24px;
   }
   
   .faq-answer-text {
@@ -2052,7 +2060,7 @@ p {
   }
   
   .faq-title {
-    font-size: 35px;
+    font-size: 50px;
   }
   
   .faq-question {
@@ -2081,7 +2089,7 @@ p {
   }
   
   .faq-title {
-    font-size: 30px;
+    font-size: 50px;
   }
   
   .faq-question-text {
@@ -2296,7 +2304,7 @@ p {
   } */
   
   .footer-title {
-    font-size: 45px;
+    font-size: 50px;
   }
   
   .sponsor-description,
@@ -2346,7 +2354,7 @@ p {
   }
   
   .footer-title {
-    font-size: 40px;
+    font-size: 50px;
   }
   
   .sponsor-description,
@@ -2410,7 +2418,7 @@ p {
   }
   
   .footer-title {
-    font-size: 35px;
+    font-size: 50px;
   }
   
   .sponsor-description,
@@ -2428,19 +2436,6 @@ p {
   } */
 }
 
-@media (max-width: 600px) {
-  /* .sponsor {
-    max-width: 400px;
-  } */
-  
-  /* .sponsor-logo-image {
-    height: 70px;
-  } */
-  
-  .footer-title {
-    font-size: 32px;
-  }
-}
 
 @media (max-width: 480px) {
   .footer-block {
@@ -2457,7 +2452,7 @@ p {
   } */
   
   .footer-title {
-    font-size: 30px;
+    font-size: 50px;
   }
   
   .sponsor-description,
