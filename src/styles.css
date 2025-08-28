@@ -1362,7 +1362,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 90px;
+  padding: 0 90px 60px;
 }
 
 .hosts-background {
@@ -1457,7 +1457,7 @@ p {
   
   .hosts-content {
     height: auto;
-    padding: 40px 60px;
+    padding: 0 60px 40px;
   }
   
   .host-item {
@@ -1485,7 +1485,7 @@ p {
   }
   
   .hosts-content {
-    padding: 30px 40px;
+    padding: 0 40px 30px;
   }
   
   .hosts-container {
@@ -1518,7 +1518,7 @@ p {
   }
   
   .hosts-content {
-    padding: 20px 30px;
+    padding: 0 30px 20px;
   }
   
   .hosts-container {
@@ -1559,7 +1559,7 @@ p {
 
 @media (max-width: 480px) {
   .hosts-content {
-    padding: 15px 20px;
+    padding: 0 20px 15px;
   }
   
   .hosts-container {
