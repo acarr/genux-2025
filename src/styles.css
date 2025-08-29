@@ -1110,11 +1110,21 @@ p {
   .speaker-card {
     width: 250px;
   }
+  
+  .speaker-name {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
 }
 
 @media (max-width: 1024px) {
     .speakers-content {
         padding: 0 30px;
+    }
+    
+    .speaker-name {
+      font-size: 18px;
+      letter-spacing: 2px;
     }
 }
 
@@ -1122,11 +1132,21 @@ p {
   .speaker-card {
     width: 200px;
   }
+  
+  .speaker-name {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
 }
 
 @media (max-width: 480px) {
   .speaker-card {
     width: 160px;
+  }
+  
+  .speaker-name {
+    font-size: 14px;
+    letter-spacing: 1px;
   }
 }
 
