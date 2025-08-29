@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "image-optimizer": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-image-optimizer"
+      ],
+      "env": {}
+    }
+  }
+}
