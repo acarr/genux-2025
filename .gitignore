@@ -56,6 +56,9 @@ out/
 .cache/
 .parcel-cache/
 
+# Playwright MCP temporary files
+.playwright-mcp/
+
 # Optional: Lock files (uncomment if using package managers)
 # package-lock.json
 # yarn.lock

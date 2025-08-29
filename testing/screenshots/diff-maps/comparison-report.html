@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENUX 2025 - Cross-Browser Visual Comparison Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #041D1D;
+            border-bottom: 3px solid #95E208;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0A6E6E;
+            margin: 30px 0 15px 0;
+        }
+        .summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            border-left: 4px solid #95E208;
+        }
+        .comparison {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .comparison-header {
+            background: #041D1D;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        .comparison-content {
+            padding: 20px;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .metric {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0A6E6E;
+        }
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: 5px;
+        }
+        .images {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image-container h4 {
+            margin: 0 0 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-excellent { background: #d4edda; color: #155724; }
+        .status-good { background: #d1ecf1; color: #0c5460; }
+        .status-fair { background: #fff3cd; color: #856404; }
+        .status-poor { background: #f8d7da; color: #721c24; }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Cross-Browser Visual Comparison Report</h1>
+        <div class="summary">
+            <h2>📊 Summary</h2>
+            <p><strong>Project:</strong> GENUX Conference 2025 Website</p>
+            <p><strong>Test Date:</strong> 8/29/2025</p>
+            <p><strong>Browsers Tested:</strong> Chrome, Firefox, Safari</p>
+            <p><strong>Viewport:</strong> 1920x1080 (Desktop)</p>
+        </div>
+
+        
+        <div class="comparison">
+            <div class="comparison-header">
+                Chrome vs Firefox <span class="status-badge status-excellent">Excellent</span>
+            </div>
+            <div class="comparison-content">
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">0%</div>
+                        <div class="metric-label">Visual Difference</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Different Pixels</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1920×5424</div>
+                        <div class="metric-label">Resolution</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">10,414,080</div>
+                        <div class="metric-label">Total Pixels</div>
+                    </div>
+                </div>
+                <div class="images">
+                    <div class="image-container">
+                        <h4>Chrome Screenshot</h4>
+                        <img src="../chrome/homepage.png" alt="Chrome screenshot">
+                    </div>
+                    <div class="image-container">
+                        <h4>Firefox Screenshot</h4>
+                        <img src="../firefox/homepage.png" alt="Firefox screenshot">
+                    </div>
+                    <div class="image-container">
+                        <h4>Visual Differences</h4>
+                        <img src="chrome-vs-firefox-diff.png" alt="Diff map">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comparison">
+            <div class="comparison-header">
+                Chrome vs Safari <span class="status-badge status-poor">Poor</span>
+            </div>
+            <div class="comparison-content">
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">11.62%</div>
+                        <div class="metric-label">Visual Difference</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1,210,214</div>
+                        <div class="metric-label">Different Pixels</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1920×5424</div>
+                        <div class="metric-label">Resolution</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">10,414,080</div>
+                        <div class="metric-label">Total Pixels</div>
+                    </div>
+                </div>
+                <div class="images">
+                    <div class="image-container">
+                        <h4>Chrome Screenshot</h4>
+                        <img src="../chrome/homepage.png" alt="Chrome screenshot">
+                    </div>
+                    <div class="image-container">
+                        <h4>Safari Screenshot</h4>
+                        <img src="../safari/homepage.png" alt="Safari screenshot">
+                    </div>
+                    <div class="image-container">
+                        <h4>Visual Differences</h4>
+                        <img src="chrome-vs-safari-diff.png" alt="Diff map">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comparison">
+            <div class="comparison-header">
+                Firefox vs Safari <span class="status-badge status-poor">Poor</span>
+            </div>
+            <div class="comparison-content">
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">11.62%</div>
+                        <div class="metric-label">Visual Difference</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1,210,214</div>
+                        <div class="metric-label">Different Pixels</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1920×5424</div>
+                        <div class="metric-label">Resolution</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">10,414,080</div>
+                        <div class="metric-label">Total Pixels</div>
+                    </div>
+                </div>
+                <div class="images">
+                    <div class="image-container">
+                        <h4>Firefox Screenshot</h4>
+                        <img src="../firefox/homepage.png" alt="Firefox screenshot">
+                    </div>
+                    <div class="image-container">
+                        <h4>Safari Screenshot</h4>
+                        <img src="../safari/homepage.png" alt="Safari screenshot">
+                    </div>
+                    <div class="image-container">
+                        <h4>Visual Differences</h4>
+                        <img src="firefox-vs-safari-diff.png" alt="Diff map">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Generated by Visual Diff Tool using <a href="https://github.com/mapbox/pixelmatch">pixelmatch</a> and <a href="https://github.com/arian/pngjs">pngjs</a></p>
+            <p>Threshold: 0.1 | Magenta = Pixel Differences | Cyan = Alternative Differences</p>
+        </div>
+    </div>
+</body>
+</html>
