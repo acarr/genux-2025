@@ -72,6 +72,21 @@
 }
 
 /* ==========================================================================
+   Font Display Optimization
+   ========================================================================== */
+
+/* Optimize font loading for better performance and reduced layout shifts */
+@font-face {
+  font-family: 'adelphi-pe-variable';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'stinger-variable';
+  font-display: swap;
+}
+
+/* ==========================================================================
    CSS Reset and Base Styles
    ========================================================================== */
 
