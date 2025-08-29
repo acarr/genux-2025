@@ -377,6 +377,9 @@ ready(() => {
   // Initialize FAQ accordion
   window.faqAccordion = new FAQAccordion();
   
+  // Initialize hero carousel
+  window.heroCarousel = new HeroCarousel();
+  
   // Handle reduced motion preference
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.body.classList.add('reduced-motion');
@@ -443,12 +446,122 @@ document.addEventListener('DOMContentLoaded', () => {
   window.navigationManager = new NavigationManager();
 });
 
+// ==========================================================================
+// Hero Carousel
+// ==========================================================================
+
+class HeroCarousel {
+  constructor() {
+    this.emblaNode = document.querySelector('.hero-carousel[data-embla]');
+    this.dots = document.querySelectorAll('.carousel-dot');
+    this.emblaApi = null;
+    this.autoplayPlugin = null;
+    
+    this.init();
+  }
+
+  init() {
+    if (!this.emblaNode || typeof EmblaCarousel === 'undefined') {
+      console.warn('Embla Carousel not found or not loaded');
+      return;
+    }
+
+    // Initialize Embla with options
+    const options = {
+      loop: true,
+      speed: 8,
+      startIndex: 0,
+      slidesToScroll: 1,
+      containScroll: 'trimSnaps',
+      dragFree: false,
+    };
+
+    // Initialize autoplay plugin
+    this.autoplayPlugin = typeof EmblaCarouselAutoplay !== 'undefined' ? 
+      EmblaCarouselAutoplay({ delay: 3000, stopOnInteraction: false }) : null;
+
+    // Create Embla instance
+    const plugins = this.autoplayPlugin ? [this.autoplayPlugin] : [];
+    this.emblaApi = EmblaCarousel(this.emblaNode, options, plugins);
+
+    // Setup event listeners
+    this.setupEventListeners();
+    
+    // Initialize dots
+    this.updateDots();
+    
+    console.log('Hero Carousel initialized');
+  }
+
+  setupEventListeners() {
+    if (!this.emblaApi) return;
+
+    // Listen for slide selection
+    this.emblaApi.on('select', () => {
+      this.updateDots();
+    });
+
+    // Add dot click handlers
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        this.goToSlide(index);
+      });
+    });
+
+    // Restart autoplay on user interaction
+    this.emblaApi.on('pointerDown', () => {
+      if (this.autoplayPlugin) {
+        this.autoplayPlugin.stop();
+      }
+    });
+
+    this.emblaApi.on('pointerUp', () => {
+      if (this.autoplayPlugin) {
+        this.autoplayPlugin.play();
+      }
+    });
+  }
+
+  updateDots() {
+    if (!this.emblaApi) return;
+
+    const selectedIndex = this.emblaApi.selectedScrollSnap();
+    
+    this.dots.forEach((dot, index) => {
+      if (index === selectedIndex) {
+        dot.classList.add('active');
+        dot.setAttribute('aria-pressed', 'true');
+      } else {
+        dot.classList.remove('active');
+        dot.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  goToSlide(index) {
+    if (this.emblaApi) {
+      this.emblaApi.scrollTo(index);
+    }
+  }
+
+  getSelectedIndex() {
+    return this.emblaApi ? this.emblaApi.selectedScrollSnap() : 0;
+  }
+
+  destroy() {
+    if (this.emblaApi) {
+      this.emblaApi.destroy();
+    }
+  }
+}
+
 // Expose useful functions globally
 window.GENUX = {
   ScrollingText,
   BlockManager,
   FAQAccordion,
   NavigationManager,
+  HeroCarousel,
   createScrollObserver,
   debounce,
   throttle,
@@ -462,5 +575,9 @@ window.GENUX = {
   // FAQ functions
   openFAQ: (index) => window.faqAccordion?.openFAQ(index),
   closeFAQ: (index) => window.faqAccordion?.closeFAQ(index),
-  closeAllFAQs: () => window.faqAccordion?.closeAllFAQs()
+  closeAllFAQs: () => window.faqAccordion?.closeAllFAQs(),
+  
+  // Carousel functions
+  goToSlide: (index) => window.heroCarousel?.scrollTo(index),
+  getCarouselIndex: () => window.heroCarousel?.selectedScrollSnap(),
 };
