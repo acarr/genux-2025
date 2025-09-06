@@ -1177,19 +1177,19 @@ p {
   /* Hero block responsive */
   @media (max-width: 1200px) {
     .hero-block {
-      height: 60vh;
+      height: 70vh;
     }
   }
 
   @media (max-width: 768px) {
     .hero-block {
-      height: 50vh;
+      height: 60vh;
     }
   }
 
   @media (max-width: 480px) {
     .hero-block {
-      height: 40vh;
+      height: 50vh;
     }
   }
 
