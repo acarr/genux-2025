@@ -1359,7 +1359,7 @@ p {
 
 .details-container {
   width: 100%;
-  background: var(--color-darker-teal);
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
