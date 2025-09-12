@@ -1976,6 +1976,18 @@ p {
   line-height: 1.4;
 }
 
+/* Break item styles */
+.schedule-break .schedule-time {
+  color: #666666;
+  opacity: 0.7;
+}
+
+.schedule-break .schedule-title {
+  color: #666666;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
   /* Schedule description responsive */
   @media (max-width: 1024px) {
     .schedule-description {
