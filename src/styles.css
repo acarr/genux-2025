@@ -2362,6 +2362,10 @@ p {
   object-fit: contain;
 }
 
+.sponsor.aiga .sponsor-logo-image {
+  height: 110px;
+}
+
 .sponsor-copy {
   width: 100%;
   display: flex;
