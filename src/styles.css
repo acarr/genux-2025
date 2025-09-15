@@ -2444,6 +2444,12 @@ p {
   object-fit: contain;
 }
 
+.lovable-logo {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Footer Responsive Styles */
 @media (max-width: 1400px) {
   .footer-block {
