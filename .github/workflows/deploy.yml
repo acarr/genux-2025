@@ -2,14 +2,23 @@ name: Deploy to FTP
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, production ]
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   deploy:
     name: Deploy to FTP Server
     runs-on: ubuntu-latest
-    environment: Staging
+    environment: ${{ inputs.environment || (github.ref == 'refs/heads/production' && 'Production' || 'Staging') }}
     
     steps:
     - name: Checkout code
